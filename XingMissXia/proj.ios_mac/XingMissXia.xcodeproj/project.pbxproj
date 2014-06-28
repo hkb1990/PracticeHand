@@ -25,6 +25,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		424028CA195B069900460B8E /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424028C8195B069900460B8E /* StartScene.cpp */; };
+		425EF725195EA7AC003C067A /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 425EF724195EA7AC003C067A /* paddle.png */; };
 		4291FAE1195C54CE003B33BE /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4291FADC195C54CE003B33BE /* Marker Felt.ttf */; };
 		4291FAF1195C5895003B33BE /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FAF0195C5895003B33BE /* SceneManager.cpp */; };
 		4291FAF4195C592C003B33BE /* MenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FAF3195C592C003B33BE /* MenuLayer.cpp */; };
@@ -164,6 +165,7 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		424028C8195B069900460B8E /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartScene.cpp; path = ../Classes/StartScene.cpp; sourceTree = "<group>"; };
 		424028C9195B069900460B8E /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = ../Classes/StartScene.h; sourceTree = "<group>"; };
+		425EF724195EA7AC003C067A /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 		4291FADC195C54CE003B33BE /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		4291FAEF195C581B003B33BE /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		4291FAF0195C5895003B33BE /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				425EF724195EA7AC003C067A /* paddle.png */,
 				4291FB18195C72AE003B33BE /* background.jpg */,
 				4291FADB195C54CE003B33BE /* fonts */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -588,6 +591,7 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				425EF725195EA7AC003C067A /* paddle.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				4291FB19195C72AE003B33BE /* background.jpg in Resources */,

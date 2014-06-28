@@ -19,7 +19,7 @@ public:
     CreditLayer();
     ~CreditLayer();
     bool init();
-    void back(cocos2d::Object* pSender);
+    void back(cocos2d::Ref* pSender);
     
     CREATE_FUNC(CreditLayer);
 };

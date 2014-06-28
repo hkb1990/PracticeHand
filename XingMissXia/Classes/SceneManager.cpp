@@ -132,7 +132,8 @@ void SceneManager::go(Layer* layer)
 
 Scene* SceneManager::wrap(Layer *layer)
 {
-    Scene *newScene = Scene::create();
+    Scene *newScene = Scene::createWithPhysics();
+    //newScene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     newScene->addChild(layer);
     return newScene;
 }

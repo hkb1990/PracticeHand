@@ -12,7 +12,7 @@
 #include "cocos2d.h"
 #include "MenuLayer.h"
 
-class SceneManager : public cocos2d::Object
+class SceneManager : public cocos2d::Ref
 {
 public:
     SceneManager() {};
