@@ -25,6 +25,13 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		424028CA195B069900460B8E /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424028C8195B069900460B8E /* StartScene.cpp */; };
+		4291FAE1195C54CE003B33BE /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4291FADC195C54CE003B33BE /* Marker Felt.ttf */; };
+		4291FAF1195C5895003B33BE /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FAF0195C5895003B33BE /* SceneManager.cpp */; };
+		4291FAF4195C592C003B33BE /* MenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FAF3195C592C003B33BE /* MenuLayer.cpp */; };
+		4291FB11195C6331003B33BE /* PlayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FB10195C6331003B33BE /* PlayLayer.cpp */; };
+		4291FB14195C638C003B33BE /* CreditLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FB13195C638C003B33BE /* CreditLayer.cpp */; };
+		4291FB17195C714D003B33BE /* BaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4291FB16195C714D003B33BE /* BaseLayer.cpp */; };
+		4291FB19195C72AE003B33BE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4291FB18195C72AE003B33BE /* background.jpg */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -157,6 +164,18 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		424028C8195B069900460B8E /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartScene.cpp; path = ../Classes/StartScene.cpp; sourceTree = "<group>"; };
 		424028C9195B069900460B8E /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = ../Classes/StartScene.h; sourceTree = "<group>"; };
+		4291FADC195C54CE003B33BE /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
+		4291FAEF195C581B003B33BE /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		4291FAF0195C5895003B33BE /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		4291FAF2195C58E9003B33BE /* MenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		4291FAF3195C592C003B33BE /* MenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuLayer.cpp; sourceTree = "<group>"; };
+		4291FB03195C62F9003B33BE /* PlayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayLayer.h; sourceTree = "<group>"; };
+		4291FB10195C6331003B33BE /* PlayLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayLayer.cpp; sourceTree = "<group>"; };
+		4291FB12195C636A003B33BE /* CreditLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditLayer.h; sourceTree = "<group>"; };
+		4291FB13195C638C003B33BE /* CreditLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreditLayer.cpp; sourceTree = "<group>"; };
+		4291FB15195C7105003B33BE /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		4291FB16195C714D003B33BE /* BaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseLayer.cpp; sourceTree = "<group>"; };
+		4291FB18195C72AE003B33BE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -269,6 +288,16 @@
 				424028C9195B069900460B8E /* StartScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				4291FAEF195C581B003B33BE /* SceneManager.h */,
+				4291FAF0195C5895003B33BE /* SceneManager.cpp */,
+				4291FAF2195C58E9003B33BE /* MenuLayer.h */,
+				4291FAF3195C592C003B33BE /* MenuLayer.cpp */,
+				4291FB03195C62F9003B33BE /* PlayLayer.h */,
+				4291FB10195C6331003B33BE /* PlayLayer.cpp */,
+				4291FB12195C636A003B33BE /* CreditLayer.h */,
+				4291FB13195C638C003B33BE /* CreditLayer.cpp */,
+				4291FB15195C7105003B33BE /* BaseLayer.h */,
+				4291FB16195C714D003B33BE /* BaseLayer.cpp */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -336,6 +365,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4291FADB195C54CE003B33BE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4291FADC195C54CE003B33BE /* Marker Felt.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +421,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4291FB18195C72AE003B33BE /* background.jpg */,
+				4291FADB195C54CE003B33BE /* fonts */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -551,6 +590,7 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				4291FB19195C72AE003B33BE /* background.jpg in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -563,6 +603,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				4291FAE1195C54CE003B33BE /* Marker Felt.ttf in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
@@ -586,8 +627,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4291FB14195C638C003B33BE /* CreditLayer.cpp in Sources */,
+				4291FAF4195C592C003B33BE /* MenuLayer.cpp in Sources */,
+				4291FB17195C714D003B33BE /* BaseLayer.cpp in Sources */,
+				4291FB11195C6331003B33BE /* PlayLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				4291FAF1195C5895003B33BE /* SceneManager.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				424028CA195B069900460B8E /* StartScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
