@@ -28,13 +28,13 @@ bool CreditLayer::init()
     
     MenuItemFont *back = MenuItemFont::create("back", CC_CALLBACK_1(CreditLayer::back, this));
     Menu *menu = Menu::create(back, NULL);
-    menu->setPosition(visibleSize.width/2, visibleSize.height/2);
+    menu->setPosition(visibleSize.width*9/10, visibleSize.height*9/10);
     this->addChild(menu);
     
     return true;
 }
 
-void CreditLayer::back(Object* pSender)
+void CreditLayer::back(Ref* pSender)
 {
     SceneManager::goMenu();
 }
