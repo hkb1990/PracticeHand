@@ -58,8 +58,6 @@ void PlayLayer::startPlay()
     ballBody->getShape(0)->setFriction(0.0f);
     ballBody->getShape(0)->setDensity(1.0f);
     ballBody->setGravityEnable(false);
-    Vect force = Vect(1000000.0f, 1000000.0f);
-    ballBody->applyImpulse(force);
     ball->setPhysicsBody(ballBody);
     ball->setTag(1);
     this->addChild(ball);
@@ -75,17 +73,25 @@ void PlayLayer::startPlay()
     paddle->setPhysicsBody(paddleBody);
     ball->setTag(2);
     this->addChild(paddle);
+    
+    m_pJoystick = Sprite::create("joystick.png");
+    m_pJoystickBg = Sprite::create("joystick_bg.png");
+    this->addChild(m_pJoystickBg, 0);
+    this->addChild(m_pJoystick, 1);
+    
+    this->hideJoystick();
 }
 
 void PlayLayer::onEnter()
 {
     Layer::onEnter();
     
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->setSwallowTouches(true);
+    auto listener = EventListenerTouchAllAtOnce::create();
+    //listener->setSwallowTouches(true);
     
-    listener->onTouchBegan = CC_CALLBACK_2(PlayLayer::onTouchBegan, this);
-    listener->onTouchMoved = CC_CALLBACK_2(PlayLayer::onTouchMoved, this);
+    listener->onTouchesBegan = CC_CALLBACK_2(PlayLayer::onTouchesBegan, this);
+    listener->onTouchesMoved = CC_CALLBACK_2(PlayLayer::onTouchesMoved, this);
+    listener->onTouchesEnded = CC_CALLBACK_2(PlayLayer::onTouchesEnded, this);
     
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(PlayLayer::onContactBegin, this);
@@ -96,9 +102,34 @@ void PlayLayer::onEnter()
     dispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
 }
 
-bool PlayLayer::onTouchBegan(Touch *Touch, Event *Event)
+void PlayLayer::showJoystick(Point pos)
 {
-    return true;
+	m_pJoystick->setPosition(pos);
+	m_pJoystickBg->setPosition(pos);
+    
+	m_pJoystick->setVisible(true);
+	m_pJoystickBg->setVisible(true);
+}
+
+void PlayLayer::hideJoystick()
+{
+	m_pJoystick->setPosition(m_pJoystickBg->getPosition());
+	m_pJoystick->setVisible(false);
+	m_pJoystickBg->setVisible(false);
+}
+
+void PlayLayer::updateJoystick(Point direction, float distance)
+{
+	Point start = m_pJoystickBg->getPosition();
+    
+	if(distance < 33)
+	{
+		m_pJoystick->setPosition(start + (direction * distance));
+	}else if(distance > 78) {
+		m_pJoystick->setPosition(start + (direction * 45));
+	}else {
+		m_pJoystick->setPosition(start + (direction * 33));
+	}
 }
 
 bool PlayLayer::onContactBegin(PhysicsContact& contact)
@@ -106,11 +137,50 @@ bool PlayLayer::onContactBegin(PhysicsContact& contact)
     return true;
 }
 
-void PlayLayer::onTouchMoved(Touch* touch, Event* event)
+void PlayLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *event)
 {
-    Point touchLocation = this->convertToWorldSpace(this->convertTouchToNodeSpace(touch));
-    paddle->setPositionX(touchLocation.x);
+	Size winSize = Director::getInstance()->getWinSize();
+	Vector<Touch*>::const_iterator touchIter = touches.begin();
+	while(touchIter != touches.end())
+	{
+		Touch *pTouch = (Touch*)(*touchIter);
+		Point p = pTouch->getLocation();
+		if(p.x <= winSize.width / 2)
+		{
+			this->showJoystick(p);
+		}else {
+			//m_pHero->attack();
+		}
+        
+		++ touchIter;
+	}
+}
+
+void PlayLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event* event)
+{
+    Size winSize = Director::getInstance()->getWinSize();
+	std::vector<Touch*>::const_iterator touchIter = touches.begin();
+	Touch *pTouch = (Touch*)(*touchIter);
+	Point start = pTouch->getStartLocation();
+	if(start.x > winSize.width / 2)
+	{
+		return;
+	}
+	Point dest = pTouch->getLocation();
+	float distance = start.getDistance(dest);
+	Point direction = (dest - start).normalize();
+	this->updateJoystick(direction, distance);
+
+    //Point touchLocation = this->convertToWorldSpace(this->convertTouchToNodeSpace(pTouch));
+    //paddle->setPositionX(touchLocation.x);
     
+    Vect force = Vect(10000.0f * direction.x, 10000.0f * direction.y);
+    ball->getPhysicsBody()->applyImpulse(force);
+}
+
+void PlayLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event* event)
+{
+	this->hideJoystick();
 }
 
 void PlayLayer::back(Ref* pSender)
