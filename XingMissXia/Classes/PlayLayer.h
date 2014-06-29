@@ -32,11 +32,20 @@ public:
     void startPlay();
     void onEnter();
     bool onContactBegin(PhysicsContact& contact);
-    bool onTouchBegan(Touch *Touch, Event *Event);
-    void onTouchMoved(Touch* touch, Event* event);
+    void onTouchesBegan(const std::vector<Touch*>& touches, Event* Event);
+    void onTouchesMoved(const std::vector<Touch*>& touches, Event* Event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event* Event);
     void setPhyWorld(PhysicsWorld* world){ m_world = world; };
 
     CREATE_FUNC(PlayLayer);
+
+private:
+	void showJoystick(Point pos);
+	void hideJoystick();
+	void updateJoystick(Point direction, float distance);
+    
+	Sprite* m_pJoystick;
+	Sprite* m_pJoystickBg;
 };
 
 #endif

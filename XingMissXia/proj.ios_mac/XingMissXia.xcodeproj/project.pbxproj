@@ -24,6 +24,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		42143A431960564600B3752F /* joystick_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 42143A411960564600B3752F /* joystick_bg.png */; };
+		42143A441960564700B3752F /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 42143A421960564600B3752F /* joystick.png */; };
 		424028CA195B069900460B8E /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 424028C8195B069900460B8E /* StartScene.cpp */; };
 		425EF725195EA7AC003C067A /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 425EF724195EA7AC003C067A /* paddle.png */; };
 		4291FAE1195C54CE003B33BE /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4291FADC195C54CE003B33BE /* Marker Felt.ttf */; };
@@ -163,6 +165,8 @@
 		1D6058910D05DD3D006BFB54 /* XingMissXia iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XingMissXia iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42143A411960564600B3752F /* joystick_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick_bg.png; sourceTree = "<group>"; };
+		42143A421960564600B3752F /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		424028C8195B069900460B8E /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StartScene.cpp; path = ../Classes/StartScene.cpp; sourceTree = "<group>"; };
 		424028C9195B069900460B8E /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = ../Classes/StartScene.h; sourceTree = "<group>"; };
 		425EF724195EA7AC003C067A /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
@@ -423,6 +427,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				42143A411960564600B3752F /* joystick_bg.png */,
+				42143A421960564600B3752F /* joystick.png */,
 				425EF724195EA7AC003C067A /* paddle.png */,
 				4291FB18195C72AE003B33BE /* background.jpg */,
 				4291FADB195C54CE003B33BE /* fonts */,
@@ -588,6 +594,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42143A431960564600B3752F /* joystick_bg.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -602,6 +609,7 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
+				42143A441960564700B3752F /* joystick.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
