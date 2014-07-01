@@ -32,6 +32,44 @@ bool PlayLayer::init()
     
     this->addChild(menu);
     
+    SpriteFrameCache* cache =
+    SpriteFrameCache::getInstance();
+	cache->addSpriteFramesWithFile("UI.plist", "UI.png");
+    
+	mJoystick = NULL;
+	mJoystick = new SneakyJoystick();
+	mJoystick->initWithRect(Rect::ZERO);
+	mJoystick->setAutoCenter(true);
+	mJoystick->setHasDeadzone(true);
+	mJoystick->setDeadRadius(10);
+	SneakyJoystickSkinnedBase* jstickSkin = new SneakyJoystickSkinnedBase();
+	jstickSkin->autorelease();
+	jstickSkin->init();
+	jstickSkin->setBackgroundSprite(CCSprite::createWithSpriteFrameName("JoyStick-base.png"));
+	jstickSkin->setThumbSprite(CCSprite::createWithSpriteFrameName("JoyStick-thumb.png"));
+	//jstickSkin->getThumbSprite()->setScale(0.5f);
+	jstickSkin->setPosition(visibleSize.width*1/10, visibleSize.width*1/10);
+	jstickSkin->setJoystick(mJoystick);
+	this->addChild(jstickSkin);
+    
+	mButtonA = NULL;
+	mButtonA = new SneakyButton();
+	mButtonA->initWithRect(Rect::ZERO);
+	mButtonA->setIsToggleable(false);
+	mButtonA->setIsHoldable(true);
+	SneakyButtonSkinnedBase* btnASkin = new SneakyButtonSkinnedBase();
+	btnASkin->autorelease();
+	btnASkin->init();
+	btnASkin->setPosition(visibleSize.width*9/10, visibleSize.width*1/10);
+	btnASkin->setDefaultSprite(CCSprite::createWithSpriteFrameName("button-default.png"));
+	btnASkin->setPressSprite(CCSprite::createWithSpriteFrameName("button-pressed.png"));
+	btnASkin->setActivatedSprite(CCSprite::createWithSpriteFrameName("button-activated.png"));
+	//btnASkin->setDisabledSprite(CCSprite::createWithSpriteFrameName("button-disabled.png"));
+	btnASkin->setButton(mButtonA);
+	this->addChild(btnASkin);
+    
+    this->schedule(schedule_selector(PlayLayer::inputUpdate));
+    
     startPlay();
     
     return true;
@@ -73,114 +111,42 @@ void PlayLayer::startPlay()
     paddle->setPhysicsBody(paddleBody);
     ball->setTag(2);
     this->addChild(paddle);
+}
+
+
+void PlayLayer::inputUpdate(float dt)
+{
+	Point velocity = mJoystick->getVelocity();
+	//std::cout << velocity.x << std::endl;
     
-    m_pJoystick = Sprite::create("joystick.png");
-    m_pJoystickBg = Sprite::create("joystick_bg.png");
-    this->addChild(m_pJoystickBg, 0);
-    this->addChild(m_pJoystick, 1);
-    
-    this->hideJoystick();
+	if (velocity.x >= 0.4f || velocity.x <= -0.4f ||
+		velocity.y >= 0.4f || velocity.y <= -0.4f) {
+		Vect force = Vect(10000.0f * velocity.x, 10000.0f * velocity.y);
+        ball->getPhysicsBody()->applyImpulse(force);
+        Point p = paddle->getPosition();
+        float s = p.x + velocity.x * 5;
+        if(s < 0)
+            s = 0;
+        else if (s > Director::getInstance()->getVisibleSize().width)
+            s = Director::getInstance()->getVisibleSize().width;
+        else{
+            s = s;
+        }
+        paddle->setPositionX(s);
+	}
+    if(mButtonA->getIsActive()){
+        ball->setPosition(100,100);
+    }
 }
 
 void PlayLayer::onEnter()
 {
     Layer::onEnter();
-    
-    auto listener = EventListenerTouchAllAtOnce::create();
-    //listener->setSwallowTouches(true);
-    
-    listener->onTouchesBegan = CC_CALLBACK_2(PlayLayer::onTouchesBegan, this);
-    listener->onTouchesMoved = CC_CALLBACK_2(PlayLayer::onTouchesMoved, this);
-    listener->onTouchesEnded = CC_CALLBACK_2(PlayLayer::onTouchesEnded, this);
-    
-    auto contactListener = EventListenerPhysicsContact::create();
-    contactListener->onContactBegin = CC_CALLBACK_1(PlayLayer::onContactBegin, this);
-    
-    auto dispatcher = Director::getInstance()->getEventDispatcher();
-    
-    dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-    dispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
-}
-
-void PlayLayer::showJoystick(Point pos)
-{
-	m_pJoystick->setPosition(pos);
-	m_pJoystickBg->setPosition(pos);
-    
-	m_pJoystick->setVisible(true);
-	m_pJoystickBg->setVisible(true);
-}
-
-void PlayLayer::hideJoystick()
-{
-	m_pJoystick->setPosition(m_pJoystickBg->getPosition());
-	m_pJoystick->setVisible(false);
-	m_pJoystickBg->setVisible(false);
-}
-
-void PlayLayer::updateJoystick(Point direction, float distance)
-{
-	Point start = m_pJoystickBg->getPosition();
-    
-	if(distance < 33)
-	{
-		m_pJoystick->setPosition(start + (direction * distance));
-	}else if(distance > 78) {
-		m_pJoystick->setPosition(start + (direction * 45));
-	}else {
-		m_pJoystick->setPosition(start + (direction * 33));
-	}
 }
 
 bool PlayLayer::onContactBegin(PhysicsContact& contact)
 {
     return true;
-}
-
-void PlayLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *event)
-{
-	Size winSize = Director::getInstance()->getWinSize();
-	Vector<Touch*>::const_iterator touchIter = touches.begin();
-	while(touchIter != touches.end())
-	{
-		Touch *pTouch = (Touch*)(*touchIter);
-		Point p = pTouch->getLocation();
-		if(p.x <= winSize.width / 2)
-		{
-			this->showJoystick(p);
-		}else {
-			//m_pHero->attack();
-		}
-        
-		++ touchIter;
-	}
-}
-
-void PlayLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event* event)
-{
-    Size winSize = Director::getInstance()->getWinSize();
-	std::vector<Touch*>::const_iterator touchIter = touches.begin();
-	Touch *pTouch = (Touch*)(*touchIter);
-	Point start = pTouch->getStartLocation();
-	if(start.x > winSize.width / 2)
-	{
-		return;
-	}
-	Point dest = pTouch->getLocation();
-	float distance = start.getDistance(dest);
-	Point direction = (dest - start).normalize();
-	this->updateJoystick(direction, distance);
-
-    //Point touchLocation = this->convertToWorldSpace(this->convertTouchToNodeSpace(pTouch));
-    //paddle->setPositionX(touchLocation.x);
-    
-    Vect force = Vect(10000.0f * direction.x, 10000.0f * direction.y);
-    ball->getPhysicsBody()->applyImpulse(force);
-}
-
-void PlayLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event* event)
-{
-	this->hideJoystick();
 }
 
 void PlayLayer::back(Ref* pSender)
