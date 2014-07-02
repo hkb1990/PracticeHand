@@ -75,9 +75,9 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
-		D4EF9AED196487E900172861 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF9AEC196487E900172861 /* Player.png */; };
-		D4EF9AEF196487E900172861 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF9AEE196487E900172861 /* Projectile.png */; };
-		D4EF9AF1196487E900172861 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF9AF0196487E900172861 /* Target.png */; };
+		D4A2D940196458370089A77A /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D93F196458370089A77A /* Player.png */; };
+		D4A2D94E1964583E0089A77A /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D94D1964583E0089A77A /* Projectile.png */; };
+		D4A2D950196458410089A77A /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D94F196458410089A77A /* Target.png */; };
 		D4EF9AF3196487E900172861 /* PlayLayerCC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4EF9AF2196487E900172861 /* PlayLayerCC.cpp */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
@@ -220,10 +220,10 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D4A2D93F196458370089A77A /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		D4A2D94D1964583E0089A77A /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
+		D4A2D94F196458410089A77A /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
 		D4EF9ADF196487E900172861 /* PlayLayerCC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayLayerCC.h; path = ../Classes/PlayLayerCC.h; sourceTree = "<group>"; };
-		D4EF9AEC196487E900172861 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player.png; path = ../../../../Desktop/Player.png; sourceTree = "<group>"; };
-		D4EF9AEE196487E900172861 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Projectile.png; path = ../../../../Desktop/Projectile.png; sourceTree = "<group>"; };
-		D4EF9AF0196487E900172861 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Target.png; path = ../../../../Desktop/Target.png; sourceTree = "<group>"; };
 		D4EF9AF2196487E900172861 /* PlayLayerCC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayLayerCC.cpp; path = ../Classes/PlayLayerCC.cpp; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -434,9 +434,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D4EF9AF0196487E900172861 /* Target.png */,
-				D4EF9AEE196487E900172861 /* Projectile.png */,
-				D4EF9AEC196487E900172861 /* Player.png */,
+				D4A2D94F196458410089A77A /* Target.png */,
+				D4A2D94D1964583E0089A77A /* Projectile.png */,
+				D4A2D93F196458370089A77A /* Player.png */,
 				425EF724195EA7AC003C067A /* paddle.png */,
 				4291FB18195C72AE003B33BE /* background.jpg */,
 				4291FADB195C54CE003B33BE /* fonts */,
@@ -604,17 +604,17 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
-				D4EF9AEF196487E900172861 /* Projectile.png in Resources */,
+				D4A2D94E1964583E0089A77A /* Projectile.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				425EF725195EA7AC003C067A /* paddle.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
-				D4EF9AED196487E900172861 /* Player.png in Resources */,
+				D4A2D940196458370089A77A /* Player.png in Resources */,
 				4291FB19195C72AE003B33BE /* background.jpg in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
-				D4EF9AF1196487E900172861 /* Target.png in Resources */,
+				D4A2D950196458410089A77A /* Target.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
