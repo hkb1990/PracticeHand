@@ -18,6 +18,7 @@ public:
     bool init();
     
     void onNewGame(cocos2d::Ref* pSender);
+    void onCCGame(cocos2d::Ref* pSender);
     void onCredits(cocos2d::Ref* pSender);
     
     CREATE_FUNC(MenuLayer);

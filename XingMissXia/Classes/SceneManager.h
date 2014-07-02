@@ -20,6 +20,7 @@ public:
     
     static void goMenu();
     static void goPlay();
+    static void goPlayCC();
     static void goCredit();
 private:
     static void go(cocos2d::Layer* layer);

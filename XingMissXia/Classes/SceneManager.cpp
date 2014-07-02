@@ -8,6 +8,7 @@
 
 #include "SceneManager.h"
 #include "PlayLayer.h"
+#include "PlayLayerCC.h"
 #include "CreditLayer.h"
 
 USING_NS_CC;
@@ -99,6 +100,12 @@ TransitionScene* createTransition(int index, float t, Scene* s)
 void SceneManager::goPlay()
 {
     Layer *layer = PlayLayer::create();
+    SceneManager::go(layer);
+}
+
+void SceneManager::goPlayCC()
+{
+    Layer *layer = PlayLayerCC::create();
     SceneManager::go(layer);
 }
 
