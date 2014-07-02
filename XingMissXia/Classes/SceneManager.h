@@ -17,7 +17,7 @@ class SceneManager : public cocos2d::Ref
 public:
     SceneManager() {};
     ~SceneManager() {};
-    
+
     static void goMenu();
     static void goPlay();
     static void goCredit();
