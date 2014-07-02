@@ -23,12 +23,12 @@ bool BaseLayer::init()
     {
         return false;
     }
-    
+
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    
+
     Sprite *bg = Sprite::create("background.jpg");
     bg->setPosition(Point(visibleSize.width/2, visibleSize.height/2));
     this->addChild(bg, 0);
-    
+
     return true;
 }
