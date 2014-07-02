@@ -32,8 +32,7 @@ bool PlayLayer::init()
 
     this->addChild(menu);
 
-    SpriteFrameCache* cache =
-        SpriteFrameCache::getInstance();
+    SpriteFrameCache* cache = SpriteFrameCache::getInstance();
     cache->addSpriteFramesWithFile("UI.plist", "UI.png");
 
     mJoystick = NULL;

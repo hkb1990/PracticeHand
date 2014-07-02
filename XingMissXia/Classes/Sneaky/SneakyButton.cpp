@@ -14,10 +14,13 @@ void SneakyButton::onEnterTransitionDidFinish()
     auto dispatcher = Director::getInstance()->getEventDispatcher();
 
     dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    this->retain();
 }
 
 void SneakyButton::onExit()
 {
+    this->release();
 }
 
 bool SneakyButton::initWithRect(Rect rect)
