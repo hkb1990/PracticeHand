@@ -8,7 +8,15 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
-                   ../../Classes/StartScene.cpp
+                   ../../Classes/BaseLayer.cpp \
+                   ../../Classes/CreditLayer.cpp \
+                   ../../Classes/PlayLayer.cpp \
+                   ../../Classes/MenuLayer.cpp \
+                   ../../Classes/SceneManager.cpp \
+                   ../../Classes/Sneaky/SneakyButton.cpp \
+                   ../../Classes/Sneaky/SneakyButtonSkinnedBase.cpp \
+                   ../../Classes/Sneaky/SneakyJoystick.cpp \
+                   ../../Classes/Sneaky/SneakyJoystickSkinnedBase.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 

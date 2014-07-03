@@ -44,10 +44,13 @@ void SneakyJoystick::onEnterTransitionDidFinish()
     listener->onTouchEnded = CC_CALLBACK_2(SneakyJoystick::onTouchEnded, this);
 
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    this->retain();
 }
 
 void SneakyJoystick::onExit()
 {
+    this->release();
 }
 
 float round(float r) {
