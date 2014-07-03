@@ -6,7 +6,7 @@ Scene* XingMissXia::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
-    
+
     // 'layer' is an autorelease object
     auto layer = XingMissXia::create();
 
@@ -26,7 +26,7 @@ bool XingMissXia::init()
     {
         return false;
     }
-    
+
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
 
@@ -36,12 +36,12 @@ bool XingMissXia::init()
 
     // add a "close" icon to exit the progress. it's an autorelease object
     auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
-                                           CC_CALLBACK_1(XingMissXia::menuCloseCallback, this));
-    
-	closeItem->setPosition(Point(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
-                                origin.y + closeItem->getContentSize().height/2));
+            "CloseNormal.png",
+            "CloseSelected.png",
+            CC_CALLBACK_1(XingMissXia::menuCloseCallback, this));
+
+    closeItem->setPosition(Point(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
+                origin.y + closeItem->getContentSize().height/2));
 
     // create menu, it's an autorelease object
     auto menu = Menu::create(closeItem, NULL);
@@ -53,12 +53,12 @@ bool XingMissXia::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    
+
     auto label = LabelTTF::create("Hello World", "Arial", 24);
-    
+
     // position the label on the center of the screen
     label->setPosition(Point(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
+                origin.y + visibleSize.height - label->getContentSize().height));
 
     // add the label as a child to this layer
     this->addChild(label, 1);
@@ -71,7 +71,7 @@ bool XingMissXia::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
-    
+
     return true;
 }
 
@@ -79,7 +79,7 @@ bool XingMissXia::init()
 void XingMissXia::menuCloseCallback(Ref* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+    MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
     return;
 #endif
 

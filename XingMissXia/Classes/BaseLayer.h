@@ -17,7 +17,7 @@ public:
     BaseLayer();
     ~BaseLayer();
     bool init();
-    
+
     CREATE_FUNC(BaseLayer);
 };
 

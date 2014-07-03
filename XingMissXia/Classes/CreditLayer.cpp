@@ -23,14 +23,14 @@ bool CreditLayer::init()
     {
         return false;
     }
-    
+
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    
+
     MenuItemFont *back = MenuItemFont::create("back", CC_CALLBACK_1(CreditLayer::back, this));
     Menu *menu = Menu::create(back, NULL);
     menu->setPosition(visibleSize.width*9/10, visibleSize.height*9/10);
     this->addChild(menu);
-    
+
     return true;
 }
 

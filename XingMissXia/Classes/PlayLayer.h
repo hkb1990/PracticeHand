@@ -13,6 +13,11 @@
 #include "SceneManager.h"
 #include "BaseLayer.h"
 
+#include "Sneaky/SneakyButton.h"
+#include "Sneaky/SneakyButtonSkinnedBase.h"
+#include "Sneaky/SneakyJoystick.h"
+#include "Sneaky/SneakyJoystickSkinnedBase.h"
+
 USING_NS_CC;
 
 class PlayLayer : public BaseLayer
@@ -22,21 +27,25 @@ public:
     ~PlayLayer();
     bool init();
     void back(Ref* pSender);
-    
+
     Sprite* ball;
     Sprite* paddle;
     Sprite* edgeSp;
-    
+
     PhysicsWorld* m_world;
-    
+
     void startPlay();
     void onEnter();
     bool onContactBegin(PhysicsContact& contact);
-    bool onTouchBegan(Touch *Touch, Event *Event);
-    void onTouchMoved(Touch* touch, Event* event);
     void setPhyWorld(PhysicsWorld* world){ m_world = world; };
 
+    void inputUpdate(float dt);
+
     CREATE_FUNC(PlayLayer);
+
+private:
+    SneakyButton* mButtonA;
+    SneakyJoystick* mJoystick;
 };
 
 #endif
