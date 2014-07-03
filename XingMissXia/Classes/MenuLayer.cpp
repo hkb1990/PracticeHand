@@ -36,11 +36,13 @@ bool MenuLayer::init()
     Label *titleCenterBottom = Label::createWithTTF(config_font52, "By HKB");
 
     MenuItemFont *startNew = MenuItemFont::create("New Game", CC_CALLBACK_1(MenuLayer::onNewGame, this));
+
+    MenuItemFont *startNewByCC = MenuItemFont::create("CC Game", CC_CALLBACK_1(MenuLayer::onCCGame, this));
     //用图片代替文字
     //MenuItemImage *startNew = MenuItemImage::create("newGameBtn.png","newGameBtn_over.png","newGameBtn.png",CC_CALLBACK_1(MenuLayer::onNewGame, this))
     MenuItemFont *credits = MenuItemFont::create("Credits", CC_CALLBACK_1(MenuLayer::onCredits, this));
 
-    Menu *menu = Menu::create(startNew, credits, NULL);
+    Menu *menu = Menu::create(startNew, startNewByCC, credits, NULL);
 
     titleCenterTop->setPosition(Point( (visibleSize.width - titleCenterTop->getContentSize().width)/2,visibleSize.height - 100) );
     this->addChild(titleCenterTop);
@@ -68,6 +70,11 @@ bool MenuLayer::init()
 void MenuLayer::onNewGame(Ref* pSender)
 {
     SceneManager::goPlay();
+}
+
+void MenuLayer::onCCGame(Ref* pSender)
+{
+    SceneManager::goPlayCC();
 }
 
 void MenuLayer::onCredits(Ref* pSender)

@@ -81,6 +81,10 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
+		D4A2D940196458370089A77A /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D93F196458370089A77A /* Player.png */; };
+		D4A2D94E1964583E0089A77A /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D94D1964583E0089A77A /* Projectile.png */; };
+		D4A2D950196458410089A77A /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A2D94F196458410089A77A /* Target.png */; };
+		D4EF9AF3196487E900172861 /* PlayLayerCC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4EF9AF2196487E900172861 /* PlayLayerCC.cpp */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +236,11 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D4A2D93F196458370089A77A /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
+		D4A2D94D1964583E0089A77A /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
+		D4A2D94F196458410089A77A /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
+		D4EF9ADF196487E900172861 /* PlayLayerCC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayLayerCC.h; path = ../Classes/PlayLayerCC.h; sourceTree = "<group>"; };
+		D4EF9AF2196487E900172861 /* PlayLayerCC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayLayerCC.cpp; path = ../Classes/PlayLayerCC.cpp; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -312,6 +321,8 @@
 				4291FAF2195C58E9003B33BE /* MenuLayer.h */,
 				4291FAF3195C592C003B33BE /* MenuLayer.cpp */,
 				4291FB03195C62F9003B33BE /* PlayLayer.h */,
+				D4EF9AF2196487E900172861 /* PlayLayerCC.cpp */,
+				D4EF9ADF196487E900172861 /* PlayLayerCC.h */,
 				4291FB10195C6331003B33BE /* PlayLayer.cpp */,
 				4291FB12195C636A003B33BE /* CreditLayer.h */,
 				4291FB13195C638C003B33BE /* CreditLayer.cpp */,
@@ -456,6 +467,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2D94F196458410089A77A /* Target.png */,
+				D4A2D94D1964583E0089A77A /* Projectile.png */,
+				D4A2D93F196458370089A77A /* Player.png */,
 				4251300E1962F87500CCF00D /* UI.plist */,
 				4251300F1962F87500CCF00D /* UI.png */,
 				425EF724195EA7AC003C067A /* paddle.png */,
@@ -625,14 +639,17 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				D4A2D94E1964583E0089A77A /* Projectile.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				425EF725195EA7AC003C067A /* paddle.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				D4A2D940196458370089A77A /* Player.png in Resources */,
 				4291FB19195C72AE003B33BE /* background.jpg in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				D4A2D950196458410089A77A /* Target.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				425130111962F87500CCF00D /* UI.png in Resources */,
@@ -675,6 +692,7 @@
 				42512FFE1962E73900CCF00D /* SneakyButton.cpp in Sources */,
 				4291FB17195C714D003B33BE /* BaseLayer.cpp in Sources */,
 				4291FB11195C6331003B33BE /* PlayLayer.cpp in Sources */,
+				D4EF9AF3196487E900172861 /* PlayLayerCC.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				42512FFF1962E73900CCF00D /* SneakyButtonSkinnedBase.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
