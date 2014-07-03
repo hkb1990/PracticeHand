@@ -21,8 +21,13 @@ bool MenuLayer::init()
 
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    TTFConfig config_font96("fonts/Marker Felt.ttf", 96);
+    TTFConfig config_font52("fonts/Marker Felt.ttf", 52);
+#else
     TTFConfig config_font96("Marker Felt.ttf", 96);
     TTFConfig config_font52("Marker Felt.ttf", 52);
+#endif
 
     Label *titleLeft = Label::createWithTTF(config_font96, "Menu");
     Label *titleRight = Label::createWithTTF(config_font96, "HHHHHH");
